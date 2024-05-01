@@ -1,28 +1,10 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.PriorityQueue;
-
-class Node {
-    String word;
-    Node parent;
-    int cost;
-
-    Node(String word, Node parent, int cost) {
-        this.word = word;
-        this.parent = parent;
-        this.cost = cost;
-    }
-}
+import java.util.*;
 
 public class UCS {
     public static AlgoResult uniformCostSearch(String startWord, String endWord, HashSet<String> dictionary) {
         long startTime = System.currentTimeMillis();
 
-        PriorityQueue<Node> prioQueue = new PriorityQueue<>(Comparator.comparingInt(node -> node.cost));
+        PriorityQueue<Node> prioQueue = new PriorityQueue<>(Comparator.comparingInt(node -> node.value));
         HashMap<String, Integer> visitedCost = new HashMap<>();
         prioQueue.offer(new Node(startWord, null, 0));
         visitedCost.put(startWord, 0);
@@ -39,11 +21,11 @@ public class UCS {
                 break;
             }
 
-            for (String neighbor : getNeighbors(current.word, dictionary)) {
-                int newCost = current.cost + 1;
-                if (!visitedCost.containsKey(neighbor) || newCost < visitedCost.get(neighbor)) {
-                    visitedCost.put(neighbor, newCost);
-                    prioQueue.offer(new Node(neighbor, current, newCost));
+            for (String possibleWord : SearchUtil.getPossibleWords(current.word, dictionary)) {
+                int newCost = current.value + 1;
+                if (!visitedCost.containsKey(possibleWord) || newCost < visitedCost.get(possibleWord)) {
+                    visitedCost.put(possibleWord, newCost);
+                    prioQueue.offer(new Node(possibleWord, current, newCost));
                 }
             }
         }
@@ -70,24 +52,5 @@ public class UCS {
         result.setExecutionTime((int) (endTime - startTime));
 
         return result;
-    }
-
-    private static List<String> getNeighbors(String word, HashSet<String> dictionary) {
-        List<String> neighbors = new ArrayList<>();
-        char[] chars = word.toCharArray();
-        for (int i = 0; i < chars.length; i++) {
-            char oldChar = chars[i];
-            for (char c = 'a'; c <= 'z'; c++) {
-                if (c != oldChar) {
-                    chars[i] = c;
-                    String newWord = new String(chars);
-                    if (dictionary.contains(newWord)) {
-                        neighbors.add(newWord);
-                    }
-                }
-            }
-            chars[i] = oldChar;
-        }
-        return neighbors;
     }
 }
