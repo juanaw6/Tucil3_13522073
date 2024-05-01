@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Utils.printWelcome();
 
-        HashSet<String> words = Utils.initializeWordsHashSet("words_alpha.txt");
+        HashSet<String> words = Utils.initializeWordsHashSet("_english.txt");
         HashSet<String> types = Utils.initializeTypesHashSet();
         Scanner scanner = new Scanner(System.in);
 
