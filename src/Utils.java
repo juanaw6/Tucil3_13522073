@@ -2,17 +2,6 @@ import java.io.*;
 import java.util.*;
 
 public class Utils {
-    public static void printWelcome() {
-        System.out.println("[SOLVER] Welcome to Word Ladder Solver!");
-        System.out.println("[GUIDES] How to use:");
-        System.out.println("1. Input your start word and end word (same length).");
-        System.out.println("2. Choose search type:");
-        System.out.println("   - UCS   (Uniform Cost Search)");
-        System.out.println("   - GBFS  (Greedy Best First Search)");
-        System.out.println("   - ASTAR (A* Search)");
-        System.out.println();
-    }
-
     public static HashSet<String> initializeWordsHashSet(String filename) {
         HashSet<String> words = new HashSet<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
@@ -27,6 +16,17 @@ public class Utils {
     }
 
     // CLI Utils
+
+    // public static void printWelcome() {
+    //     System.out.println("[SOLVER] Welcome to Word Ladder Solver!");
+    //     System.out.println("[GUIDES] How to use:");
+    //     System.out.println("1. Input your start word and end word (same length).");
+    //     System.out.println("2. Choose search type:");
+    //     System.out.println("   - UCS   (Uniform Cost Search)");
+    //     System.out.println("   - GBFS  (Greedy Best First Search)");
+    //     System.out.println("   - ASTAR (A* Search)");
+    //     System.out.println();
+    // }
 
     // public static HashSet<String> initializeTypesHashSet() {
     //     HashSet<String> types = new HashSet<>();
