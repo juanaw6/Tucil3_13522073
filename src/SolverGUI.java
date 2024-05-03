@@ -14,7 +14,7 @@ public class SolverGUI {
     private static JTable resultTable;
     private static DefaultTableModel model;
 
-    public static void main(String[] args) {
+    public static void run() {
         words = Utils.initializeWordsHashSet("_english.txt");
         SwingUtilities.invokeLater(SolverGUI::initializeGUI);
     }
@@ -38,7 +38,7 @@ public class SolverGUI {
     private static JPanel createWordPanel(String labelText, JTextField textField) {
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout(FlowLayout.CENTER));
-        panel.setBackground(Color.WHITE);  // Set panel background to white
+        panel.setBackground(Color.WHITE);
         JLabel label = new JLabel(labelText);
         label.setFont(new Font("Arial", Font.BOLD, 14));
         textField.setFont(new Font("Arial", Font.BOLD, 14));

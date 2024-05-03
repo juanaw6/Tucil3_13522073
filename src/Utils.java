@@ -26,57 +26,59 @@ public class Utils {
         return words;
     }
 
-    public static HashSet<String> initializeTypesHashSet() {
-        HashSet<String> types = new HashSet<>();
-        types.add("UCS");
-        types.add("GBFS");
-        types.add("ASTAR");
-        return types;
-    }
+    // CLI Utils
 
-    public static String promptForStartWord(HashSet<String> words, Scanner scanner) {
-        while (true) {
-            System.out.print("Start word: ");
-            String word = scanner.nextLine().trim().toLowerCase();
-            if (words.contains(word)) {
-                return word;
-            }
-            System.out.println("[ERROR] Invalid word!");
-        }
-    }
+    // public static HashSet<String> initializeTypesHashSet() {
+    //     HashSet<String> types = new HashSet<>();
+    //     types.add("UCS");
+    //     types.add("GBFS");
+    //     types.add("ASTAR");
+    //     return types;
+    // }
 
-    public static String promptForEndWord(HashSet<String> words, int length, Scanner scanner) {
-        while (true) {
-            System.out.print("End word: ");
-            String word = scanner.nextLine().trim().toLowerCase();
-            if (words.contains(word)) {
-                if (word.length() == length) {
-                    return word;
-                }
-                System.out.printf("[ERROR] End word's length must be %d characters!\n", length);
-                continue;
-            }
-            System.out.println("[ERROR] Invalid word!");
-        }
-    }
+    // public static String promptForStartWord(HashSet<String> words, Scanner scanner) {
+    //     while (true) {
+    //         System.out.print("Start word: ");
+    //         String word = scanner.nextLine().trim().toLowerCase();
+    //         if (words.contains(word)) {
+    //             return word;
+    //         }
+    //         System.out.println("[ERROR] Invalid word!");
+    //     }
+    // }
 
-    public static String promptForType(HashSet<String> types, Scanner scanner) {
-        while (true) {
-            System.out.print("Search type: ");
-            String type = scanner.nextLine().trim().toUpperCase();
-            if (types.contains(type)) {
-                return type;
-            }
-            System.out.println("[ERROR] Search Type can only be UCS, BDFS, ASTAR!");
-        }
-    }
+    // public static String promptForEndWord(HashSet<String> words, int length, Scanner scanner) {
+    //     while (true) {
+    //         System.out.print("End word: ");
+    //         String word = scanner.nextLine().trim().toLowerCase();
+    //         if (words.contains(word)) {
+    //             if (word.length() == length) {
+    //                 return word;
+    //             }
+    //             System.out.printf("[ERROR] End word's length must be %d characters!\n", length);
+    //             continue;
+    //         }
+    //         System.out.println("[ERROR] Invalid word!");
+    //     }
+    // }
 
-    public static void printResult(AlgoResult result) {
-        System.out.printf("Execution Time: %d ms\n", result.getExecutionTime());
-        System.out.printf("Total Words Checked: %d\n", result.getNodeVisited());
-        System.out.println("Paths:");
-        for (String word : result.getPath()) {
-            System.out.println(word);
-        }
-    }
+    // public static String promptForType(HashSet<String> types, Scanner scanner) {
+    //     while (true) {
+    //         System.out.print("Search type: ");
+    //         String type = scanner.nextLine().trim().toUpperCase();
+    //         if (types.contains(type)) {
+    //             return type;
+    //         }
+    //         System.out.println("[ERROR] Search Type can only be UCS, BDFS, ASTAR!");
+    //     }
+    // }
+
+    // public static void printResult(AlgoResult result) {
+    //     System.out.printf("Execution Time: %d ms\n", result.getExecutionTime());
+    //     System.out.printf("Total Words Checked: %d\n", result.getNodeVisited());
+    //     System.out.println("Paths:");
+    //     for (String word : result.getPath()) {
+    //         System.out.println(word);
+    //     }
+    // }
 }
