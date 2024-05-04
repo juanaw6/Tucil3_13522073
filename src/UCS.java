@@ -2,6 +2,14 @@ import java.util.*;
 
 public class UCS {
     public static AlgoResult uniformCostSearch(String startWord, String endWord, HashSet<String> dictionary) {
+        
+        // NOTE: For calculating memory usage
+        Runtime runtime = Runtime.getRuntime();
+        long beforeMemory, afterMemory, usedMemory;
+        runtime.gc();
+        beforeMemory = runtime.totalMemory() - runtime.freeMemory();
+        //
+        
         long startTime = System.currentTimeMillis();
 
         PriorityQueue<Node> prioQueue = new PriorityQueue<>(Comparator.comparingInt(node -> node.value));
@@ -29,6 +37,15 @@ public class UCS {
                 }
             }
         }
+
+        // NOTE: For calculating memory usage
+        runtime.gc();
+        afterMemory = runtime.totalMemory() - runtime.freeMemory();
+        usedMemory = afterMemory - beforeMemory;
+        System.out.println("[UCS] Start: " + startWord.toUpperCase());
+        System.out.println("[UCS] End  : " + endWord.toUpperCase());
+        System.out.println("[UCS] used memory (bytes): " + usedMemory);
+        //
 
         long endTime = System.currentTimeMillis();
         AlgoResult result = new AlgoResult();

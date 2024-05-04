@@ -114,8 +114,12 @@ public class SolverGUI {
     }
 
     private static void performSearch(String algorithm) {
-        String startWord = startWordField.getText().toLowerCase();
-        String endWord = endWordField.getText().toLowerCase();
+        String startWord = startWordField.getText().toLowerCase().strip();
+        String endWord = endWordField.getText().toLowerCase().strip();
+        if (startWord == "" || endWord == "") {
+            JOptionPane.showMessageDialog(frame, "Error: Please fill the blanks before searching.");
+            return;
+        }
 
         if (!isValidWord(startWord) || !isValidWord(endWord)) {
             JOptionPane.showMessageDialog(frame, "Error: One or both words are not valid English words.");

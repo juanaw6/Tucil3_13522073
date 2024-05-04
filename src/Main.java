@@ -7,7 +7,7 @@ public class Main {
         HashSet<String> dictionary = Utils.initializeWordsHashSet("_dictionary_javase.txt");
         SolverGUI.run(dictionary);
 
-        // CLI Main
+        // // CLI Main
 
         // Utils.printWelcome();
 
@@ -26,7 +26,7 @@ public class Main {
         // AlgoResult searchResult = Algorithm.search(startWord, endWord, searchType, words);
 
         // Utils.printResult(searchResult);
-        // System.out.println(searchResult.getPath().size());
+        // System.out.println("Path Length: " + searchResult.getPath().size());
 
         // scanner.close();
     }

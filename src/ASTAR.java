@@ -2,6 +2,14 @@ import java.util.*;
 
 public class ASTAR {
     public static AlgoResult aStarSearch(String startWord, String endWord, HashSet<String> dictionary) {
+
+        // NOTE: For calculating memory usage
+        Runtime runtime = Runtime.getRuntime();
+        long beforeMemory, afterMemory, usedMemory;
+        runtime.gc();
+        beforeMemory = runtime.totalMemory() - runtime.freeMemory();
+        //
+
         long startTime = System.currentTimeMillis();
 
         PriorityQueue<Node> prioQueue = new PriorityQueue<>(Comparator.comparingInt(node -> node.value));
@@ -30,6 +38,15 @@ public class ASTAR {
                 }                
             }
         }
+
+        // NOTE: For calculating memory usage
+        runtime.gc();
+        afterMemory = runtime.totalMemory() - runtime.freeMemory();
+        usedMemory = afterMemory - beforeMemory;
+        System.out.println("[A*] Start: " + startWord.toUpperCase());
+        System.out.println("[A*] End  : " + endWord.toUpperCase());
+        System.out.println("[A*] used memory (bytes): " + usedMemory);
+        //
 
         long endTime = System.currentTimeMillis();
         AlgoResult result = new AlgoResult();
