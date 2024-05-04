@@ -1,0 +1,49 @@
+This is the test cases used in the docs for A* Algorithm.
+
+Test Case 1
+    Start word  : mood
+    End word    : ruin
+
+Test Case 2
+    Start word  : lover
+    End word    : fresh
+
+Test Case 3
+    Start word  : story
+    End word    : tired
+
+Test Case 4
+    Start word  : branch
+    End word    : remain
+
+Test Case 5
+    Start word  : temple
+    End word    : happen
+
+Test Case 6
+    Start word  : coach
+    End word    : shout
+
+Test Case 7
+    Start word  : sock
+    End word    : bomb
+
+Test Case 8
+    Start word  : cart
+    End word    : shed
+
+Test Case 9
+    Start word  : inch
+    End word    : sofa
+
+Test Case 10
+    Start word  : exile
+    End word    : hover
+
+Test Case 11
+    Start word  : swing
+    End word    : yearn
+
+Test Case 12
+    Start word  : check
+    End word    : sniff

@@ -1,0 +1,49 @@
+This is the test cases used in the docs for UCS Algorithm.
+
+Test Case 1
+    Start word  : mood
+    End word    : ruin
+
+Test Case 2
+    Start word  : lover
+    End word    : fresh
+
+Test Case 3
+    Start word  : story
+    End word    : tired
+
+Test Case 4
+    Start word  : branch
+    End word    : remain
+
+Test Case 5
+    Start word  : temple
+    End word    : happen
+
+Test Case 6
+    Start word  : coach
+    End word    : shout
+
+Test Case 7
+    Start word  : post
+    End word    : dine
+
+Test Case 8
+    Start word  : tear
+    End word    : bend
+
+Test Case 9
+    Start word  : rear
+    End word    : wash
+
+Test Case 10
+    Start word  : light
+    End word    : drill
+
+Test Case 11
+    Start word  : stake
+    End word    : shell
+
+Test Case 12
+    Start word  : shape
+    End word    : heavy
