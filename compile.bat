@@ -1,4 +1,4 @@
 @echo off
 javac -d bin src\*.java
-cd bin
-java Main
+
+echo "Compiling done to ./bin"
