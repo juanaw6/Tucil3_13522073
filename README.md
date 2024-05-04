@@ -30,7 +30,13 @@ To use this program, follow these steps:
    git clone https://github.com/juanaw6/Tucil3_13522073.git
    ```
 
-3. **Auto-Compile and Run the App:**
+3. **Change Directory to the Cloned Repository:** Navigate into the cloned repository:
+   
+   ```
+   cd Tucil3_13522073
+   ```
+
+4. **Auto-Compile and Run the App:**
 
 - If you are using Windows:
 
@@ -44,7 +50,7 @@ To use this program, follow these steps:
   ./run.sh
   ```
 
-4. **Compile the Program Manually:**
+5. **Compile the Program Manually:**
 
 - If you are using Windows:
 
