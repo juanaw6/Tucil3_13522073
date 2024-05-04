@@ -16,7 +16,7 @@ The key features of this program include:
 
 - **Uniform Cost Search:** This algorithm finds the shortest path from the initial word to the final word by considering the cost of each step equally.
 - **Greedy Best First Search:** This algorithm prioritizes paths that seem to be closest to the goal state based on a heuristic function without considering the cost of each step.
-- **A* Search:** This algorithm combines the advantages of both Uniform Cost Search and Greedy Best First Search by considering both the cost of each step and a heuristic function to guide the search towards the goal state.
+- **A\* Search:** This algorithm combines the advantages of both Uniform Cost Search and Greedy Best First Search by considering both the cost of each step and a heuristic function to guide the search towards the goal state.
 
 ## Usage
 
