@@ -64,6 +64,8 @@ To use this program, follow these steps:
   ./compile.sh
   ```
 
+5. **Use the program:** Enter start word and end word (must be the same length). Choose the preferred search algorithm. Enjoy the result!
+
 ## Creator
 
 This project is part of the assignments for the Algorithm Strategy course at Institut Teknologi Bandung (ITB).
