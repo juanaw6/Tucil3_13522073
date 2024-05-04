@@ -1,17 +1,17 @@
-// import java.util.*;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
 
         // GUI Main
-
-        SolverGUI.run();
+        HashSet<String> dictionary = Utils.initializeWordsHashSet("_dictionary_javase.txt");
+        SolverGUI.run(dictionary);
 
         // CLI Main
 
         // Utils.printWelcome();
 
-        // HashSet<String> words = Utils.initializeWordsHashSet("_english.txt");
+        // HashSet<String> words = Utils.initializeWordsHashSet("_dictionary_javase.txt");
         // HashSet<String> types = Utils.initializeTypesHashSet();
         // Scanner scanner = new Scanner(System.in);
 

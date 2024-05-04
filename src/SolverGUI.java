@@ -14,8 +14,8 @@ public class SolverGUI {
     private static JTable resultTable;
     private static DefaultTableModel model;
 
-    public static void run() {
-        words = Utils.initializeWordsHashSet("_english.txt");
+    public static void run(HashSet<String> dictionary) {
+        words = dictionary;
         SwingUtilities.invokeLater(SolverGUI::initializeGUI);
     }
 
@@ -50,7 +50,7 @@ public class SolverGUI {
     private static JPanel createButtonsPanel() {
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
-        panel.setBackground(Color.WHITE);  // Set panel background to white
+        panel.setBackground(Color.WHITE);
         panel.add(createButton("Search A*", "ASTAR"));
         panel.add(createButton("Search UCS", "UCS"));
         panel.add(createButton("Search GBFS", "GBFS"));
@@ -101,13 +101,13 @@ public class SolverGUI {
     private static void customizeTableLook() {
         resultTable.setFont(new Font("Arial", Font.PLAIN, 12));
         resultTable.setRowHeight(20);
-        resultTable.getTableHeader().setFont(new Font("Arial", Font.BOLD, 12));
         resultTable.setFillsViewportHeight(true);
         resultTable.setBackground(Color.WHITE);
         resultTable.setGridColor(Color.WHITE);
         JTableHeader tableHeader = resultTable.getTableHeader();
         tableHeader.setBackground(Color.WHITE);
         tableHeader.setForeground(Color.BLACK);
+        tableHeader.setFont(new Font("Arial", Font.BOLD, 12));
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(JLabel.CENTER);
         resultTable.setDefaultRenderer(Object.class, centerRenderer);
@@ -141,7 +141,7 @@ public class SolverGUI {
         for (String word : searchResult.getPath()) {
             model.addRow(new Object[]{step++, word.toUpperCase()});
         }
-        model.addRow(new Object[]{"Execution Time", searchResult.getExecutionTime()});
+        model.addRow(new Object[]{"Execution Time (ms)", searchResult.getExecutionTime()});
         model.addRow(new Object[]{"Words Checked", searchResult.getNodeVisited()});
         
         for (int i = 0; i < model.getColumnCount(); i++) {
