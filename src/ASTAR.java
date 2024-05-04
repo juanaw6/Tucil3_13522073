@@ -22,11 +22,12 @@ public class ASTAR {
             }
 
             for (String possibleWord : SearchUtil.getPossibleWords(current.word, dictionary)) {
-                int newCost = current.value + 1 + SearchUtil.getHeuristicValue(possibleWord, endWord);
-                if (!visitedCost.containsKey(possibleWord) || newCost < visitedCost.get(possibleWord)) {
-                    visitedCost.put(possibleWord, newCost);
-                    prioQueue.offer(new Node(possibleWord, current, newCost));
-                }
+                int gNew = visitedCost.get(current.word) + 1;
+                int fNew = gNew + SearchUtil.getHeuristicValue(possibleWord, endWord);
+                if (!visitedCost.containsKey(possibleWord) || gNew < visitedCost.get(possibleWord)) {
+                    visitedCost.put(possibleWord, gNew);
+                    prioQueue.offer(new Node(possibleWord, current, fNew));
+                }                
             }
         }
 
