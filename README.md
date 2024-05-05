@@ -2,6 +2,8 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/juanaw6/Tucil3_13522073)
 
+![GUI](./img/screenshot.png)
+
 This repository contains a Java code that provides a solution finder for the word ladder puzzle. It aims to find the solution to the game using three algorithms: Uniform Cost Search, Greedy Best First Search, and A*.
 
 ## Table of Contents
