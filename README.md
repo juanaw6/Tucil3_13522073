@@ -22,7 +22,12 @@ The key features of this program include:
 
 To use this program, follow these steps:
 
-1. **Ensure Java is Installed:** Make sure you have Java installed on your system. You can download and install Java JDK from the [official Oracle website](https://www.oracle.com/id/java/technologies/downloads/).
+1. **Ensure Java is Installed:** Make sure you have Java 11+ (not headless) installed on your system. You can download and install Java JDK from the [official Oracle website](https://www.oracle.com/id/java/technologies/downloads/).
+- If you are using Linux (Java 19):
+
+  ```
+  sudo apt install openjdk-19-jdk
+  ```
 
 2. **Clone the Repository:** Clone the repository to your local machine using the following command:
 

@@ -13,8 +13,9 @@ public class GBFS {
         long startTime = System.currentTimeMillis();
 
         PriorityQueue<Node> prioQueue = new PriorityQueue<>(Comparator.comparingInt(node -> node.value));
-        HashSet<String> visited = new HashSet<>();
+        HashSet<String> queued = new HashSet<>();
         prioQueue.offer(new Node(startWord, null, SearchUtil.getHeuristicValue(startWord, endWord)));
+        queued.add(startWord);
 
         Node finalNode = null;
         int nodesVisited = 0;
@@ -28,12 +29,10 @@ public class GBFS {
                 break;
             }
 
-            if (!visited.contains(current.word)) {
-                visited.add(current.word);
-                for (String possibleWord : SearchUtil.getPossibleWords(current.word, dictionary)) {
-                    if (!visited.contains(possibleWord)) {
-                        prioQueue.offer(new Node(possibleWord, current, SearchUtil.getHeuristicValue(possibleWord, endWord)));
-                    }
+            for (String possibleWord : SearchUtil.getPossibleWords(current.word, dictionary)) {
+                if (!queued.contains(possibleWord)) {
+                    queued.add(possibleWord);
+                    prioQueue.offer(new Node(possibleWord, current, SearchUtil.getHeuristicValue(possibleWord, endWord)));
                 }
             }
         }

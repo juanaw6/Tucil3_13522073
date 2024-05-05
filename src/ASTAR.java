@@ -22,6 +22,11 @@ public class ASTAR {
 
         while (!prioQueue.isEmpty()) {
             Node current = prioQueue.poll();
+
+            if (visitedCost.get(current.word) < current.value - SearchUtil.getHeuristicValue(current.word, endWord)) {
+                continue;
+            }
+
             nodesVisited++;
 
             if (current.word.equals(endWord)) {
